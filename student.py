@@ -1,11 +1,12 @@
-from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime, date
-from src.models.user import db
+from models.user import db
 
 class Student(db.Model):
+    __tablename__ = 'students'
+    
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
-    birth_date = db.Column(db.Date, nullable=False)  # Agora obrigatório
+    birth_date = db.Column(db.Date, nullable=True)
     phone = db.Column(db.String(20), nullable=True)
     email = db.Column(db.String(120), nullable=True)
     address = db.Column(db.Text, nullable=True)

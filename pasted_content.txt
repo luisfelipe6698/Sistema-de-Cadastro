@@ -1,0 +1,70 @@
+Text file: pasted_content.txt
+Latest content with line numbers:
+1	October 16, 2025 at 8:05 PM
+2	failed
+3	e0eefeb
+4	Add files via upload
+5	
+6	Rollback
+7	Exited with status 1 while running your code.
+8	Read our docs for common ways to troubleshoot your deploy.
+9	
+10	All logs
+11	Search
+12	Search
+13	
+14	Oct 16, 8:04 PM - 8:07 PM
+15	GMT-3
+16	
+17	Menu
+18	
+19	  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+20	  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+21	  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+22	  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+23	  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+24	ModuleNotFoundError: No module named 'src'
+25	==> Exited with status 1
+26	==> Common ways to troubleshoot your deploy: https://render.com/docs/troubleshooting-deploys
+27	==> Running 'gunicorn --bind 0.0.0.0:$PORT src.main:app'
+28	Traceback (most recent call last):
+29	  File "/opt/render/project/src/.venv/bin/gunicorn", line 8, in <module>
+30	    sys.exit(run())
+31	             ~~~^^
+32	  File "/opt/render/project/src/.venv/lib/python3.13/site-packages/gunicorn/app/wsgiapp.py", line 67, in run
+33	    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+34	    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+35	  File "/opt/render/project/src/.venv/lib/python3.13/site-packages/gunicorn/app/base.py", line 236, in run
+36	    super().run()
+37	    ~~~~~~~~~~~^^
+38	  File "/opt/render/project/src/.venv/lib/python3.13/site-packages/gunicorn/app/base.py", line 72, in run
+39	    Arbiter(self).run()
+40	    ~~~~~~~^^^^^^
+41	  File "/opt/render/project/src/.venv/lib/python3.13/site-packages/gunicorn/arbiter.py", line 58, in __init__
+42	    self.setup(app)
+43	    ~~~~~~~~~~^^^^^
+44	  File "/opt/render/project/src/.venv/lib/python3.13/site-packages/gunicorn/arbiter.py", line 118, in setup
+45	    self.app.wsgi()
+46	    ~~~~~~~~~~~~~^^
+47	  File "/opt/render/project/src/.venv/lib/python3.13/site-packages/gunicorn/app/base.py", line 67, in wsgi
+48	    self.callable = self.load()
+49	                    ~~~~~~~~~^^
+50	  File "/opt/render/project/src/.venv/lib/python3.13/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+51	    return self.load_wsgiapp()
+52	           ~~~~~~~~~~~~~~~~~^^
+53	  File "/opt/render/project/src/.venv/lib/python3.13/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+54	    return util.import_app(self.app_uri)
+55	           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+56	  File "/opt/render/project/src/.venv/lib/python3.13/site-packages/gunicorn/util.py", line 371, in import_app
+57	    mod = importlib.import_module(module)
+58	  File "/opt/render/project/python/Python-3.13.4/lib/python3.13/importlib/__init__.py", line 88, in import_module
+59	    return _bootstrap._gcd_import(name[level:], package, level)
+60	           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+61	  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+62	  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+63	  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+64	  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+65	  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+66	  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+67	  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+68	ModuleNotFoundError: No module named 'src'

@@ -2,14 +2,14 @@ from flask import Blueprint, request, jsonify
 from flask_login import login_required
 from datetime import datetime, timedelta
 from sqlalchemy import func, and_
-from src.models.student import Student
-from src.models.attendance import Attendance
-from src.models.class_model import Class
-from src.models.user import db
+from models.student import Student
+from models.attendance import Attendance
+from models.class_model import Class
+from models.user import db
 
 reports_bp = Blueprint('reports', __name__)
 
-@reports_bp.route('/api/reports/frequency/<int:student_id>', methods=['GET'])
+@reports_bp.route('/reports/frequency/<int:student_id>', methods=['GET'])
 @login_required
 def get_student_frequency(student_id):
     """Gera relatório de frequência individual do aluno"""
@@ -87,7 +87,7 @@ def get_student_frequency(student_id):
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-@reports_bp.route('/api/reports/class-frequency/<int:class_id>', methods=['GET'])
+@reports_bp.route('/reports/class-frequency/<int:class_id>', methods=['GET'])
 @login_required
 def get_class_frequency(class_id):
     """Gera relatório de frequência por turma"""
@@ -159,7 +159,7 @@ def get_class_frequency(class_id):
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-@reports_bp.route('/api/reports/general-stats', methods=['GET'])
+@reports_bp.route('/reports/general-stats', methods=['GET'])
 @login_required
 def get_general_stats():
     """Estatísticas gerais do sistema"""

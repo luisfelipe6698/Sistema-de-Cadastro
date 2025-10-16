@@ -1,17 +1,16 @@
-from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-from src.models.user import db
+from models.user import db
 
 class Attendance(db.Model):
     __tablename__ = 'attendances'
     
     id = db.Column(db.Integer, primary_key=True)
-    student_id = db.Column(db.Integer, db.ForeignKey('student.id'), nullable=False)
+    student_id = db.Column(db.Integer, db.ForeignKey('students.id'), nullable=False)
     class_id = db.Column(db.Integer, db.ForeignKey('classes.id'), nullable=False)
     date = db.Column(db.Date, nullable=False)
     present = db.Column(db.Boolean, default=True)
     notes = db.Column(db.Text, nullable=True)
-    recorded_by = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=True)
+    recorded_by = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=True)
     recorded_at = db.Column(db.DateTime, default=datetime.utcnow)
     
     # Relacionamentos

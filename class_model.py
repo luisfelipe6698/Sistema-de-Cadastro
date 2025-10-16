@@ -1,6 +1,5 @@
-from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime, time
-from src.models.user import db
+from models.user import db
 
 class Class(db.Model):
     __tablename__ = 'classes'
@@ -46,7 +45,7 @@ class StudentClass(db.Model):
     __tablename__ = 'student_classes'
     
     id = db.Column(db.Integer, primary_key=True)
-    student_id = db.Column(db.Integer, db.ForeignKey('student.id'), nullable=False)
+    student_id = db.Column(db.Integer, db.ForeignKey('students.id'), nullable=False)
     class_id = db.Column(db.Integer, db.ForeignKey('classes.id'), nullable=False)
     enrollment_date = db.Column(db.DateTime, default=datetime.utcnow)
     active = db.Column(db.Boolean, default=True)
